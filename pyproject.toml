@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "actions-adfu"
+version = "0.1.0"
+description = "Flash Actions Semiconductor ATS30xx firmware packages (.fw) over USB ADFU, without the Windows vendor tool"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "bharat" }]
+requires-python = ">=3.9"
+dependencies = ["pyusb>=1.2"]
+keywords = ["actions", "ats3085", "adfu", "firmware", "flash", "usb"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Hardware",
+]
+
+[project.urls]
+Homepage = "https://github.com/sonigeez/actions-adfu"
+
+[project.scripts]
+actions-adfu = "actions_adfu.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
